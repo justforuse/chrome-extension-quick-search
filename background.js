@@ -33,8 +33,6 @@ chrome.omnibox.onInputChanged.addListener((text, suggest) => {
     suggest(res)
 })
 
-chrome.omnibox.onInputEntered.addListener((text, OnInputEnteredDisposition) => {
-    chrome.tabs.update({
-        url: text
-    })
-})
+chrome.omnibox.onInputEntered.addListener((text, disposition) => {
+    chrome.tabs.update({ url: text });
+});
